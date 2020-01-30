@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Registreer</h1>
+    <form action="/auth/register" method="post">
+        <div class="form-group">
+            <label for="email">Epos address</label>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" value="{{.username}}">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Registreer</button>
+    </form>
+    <p><a href="/auth/login">Teken In met jou wagwoord</a></p>
+    <p><a href="/auth/reset">Wagwoord verloor...</a></p>
+</div>

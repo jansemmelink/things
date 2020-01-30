@@ -1,0 +1,53 @@
+<div class="container">
+    <!-- parentID and parentName is defined when child is created from a parent's record -->
+    {{ if .parentID }}
+    <h1>Nuwe Kind van {{.parentName}}</h1>
+    {{ else }}
+    <h1>Nuwe Persoon</h1>
+    {{ end }}
+
+    <form action="/person/new?parent={{.parentID}}" method="post">
+        <div class="form-group">
+            <label for="firstname">Naam</label>
+            <input type="text" class="form-control" name="firstname" aria-describedby="firstnameHelp" placeholder="Persoon se naam">
+        </div>
+        <div class="form-group">
+            <label for="othername">Ander Name</label>
+            <input type="text" class="form-control" name="othernames" aria-describedby="firstnameHelp" placeholder="Enige ander name">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Van</label>
+            <input type="text" class="form-control" name="lastname" aria-describedby="lastnameHelp" placeholder="Persoon se van">
+        </div>
+        <div class="form-group">
+            <label for="dob">Geboortedatum</label>
+            <input type="text" class="form-control" name="dob" aria-describedby="dobHelp" placeholder="CCYY-MM-DD">
+            <small id="dobHelp" class="form-text text-muted">Skryf byvoorbeeld 26 Februarie in 1980 as: 1980-02-26.</small>
+        </div>
+        <div class="form-group">
+            <label for="gender">Geslag</label>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="gender">Manlik</label>
+                <input class="form-check-input" type="radio" name="gender" value="male">
+                <label class="form-check-label" for="gender">Vroulik</label>
+                <input class="form-check-input" type="radio" name="gender" value="female">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Epos adres</label>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Epos adres">
+            <!--small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</!--small-->
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefoon</label>
+            <input type="text" class="form-control" name="phone" aria-describedby="phoneHelp" placeholder="Telefoon nommer">
+            <small id="phoneHelp" class="form-text text-muted">Byvoorbeeld: 0821234567</small>
+        </div>
+        <div class="form-group">
+            <label for="phone">Ander Telefoon</label>
+            <input type="text" class="form-control" name="alt_phone" aria-describedby="altPhoneHelp" placeholder="Alternatiewe telefoon nommer">
+            <small id="altPhoneHelp" class="form-text text-muted">Byvoorbeeld: 0821234567</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Stoor</button>
+    </form>
+</div>

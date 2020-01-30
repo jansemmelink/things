@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>{{.name}}</h1>
+    {{ if .parentID }}
+    <h2>Deel Van</h2>
+    <p><a href="/org/view/{{.parentID}}">{{.parentName}}</a></p>
+    {{ end }}
+
+    <h2>Beskrywing</h2>
+    <p>{{.desc}}</p>
+
+    <h2>Groepe</h2>
+    <ul>
+        {{ range $group := .groups }}
+        <li><a href="/org/view/{{ $group.id }}">{{ $group.name }}</a></li>
+        {{ end }}
+    </ul>
+    <a href="/org/new?parent={{.id}}">Nuwe Groep</a>
+</div>

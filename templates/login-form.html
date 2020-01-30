@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Welkom Terug</h1>
+    <form action="/auth/login" method="post">
+        <div class="form-group">
+            <label for="email">Epos address</label>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" value="{{.email}}">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" aria-describedby="passwordHelp" placeholder="Password" autofocus>
+            <small id="passwordHelp" class="form-text text-muted">8 or more characters with some letters, digits and symbol characters</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Teken In</button>
+    </form>
+    <p><a href="/auth/register">Registreer as 'n nuwe gebruiker</a></p>
+    <p><a href="/auth/reset">Wagwoord verloor...</a></p>
+</div>

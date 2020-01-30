@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>{{.name}}</h1>
+
+    {{ if .parents }}
+    <h2>Ouers:</h2>
+    <ul>
+        {{ range $parent := .parents }}
+        <li><a href="/person/view/{{ $parent.id }}">{{ $parent.name }}</a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+    <h2>Persoonlike Inligting</h2>
+    <table class="table">
+        <!--thead>
+            <th scope="col">Veld</th><th>Waarde</th>
+        </thead-->
+        <tbody>
+            <tr><td scope="col">Naam:</td><td>{{.firstname}}</td></tr>
+            <tr><td scope="col">Ander Name:</td><td>{{.othernames}}</td></tr>
+            <tr><td scope="col">Van:</td><td>{{.lastname}}</td></tr>
+            <tr><td scope="col">Geboortedatum:</td><td>{{.dob}}</td></tr>
+            <tr><td scope="col">Geslag:</td><td>{{.gender}}</td></tr>
+            <tr><td scope="col">Epos adres:</td><td>{{.email}}</td></tr>
+            <tr><td scope="col">Telefoon:</td><td>{{.phone}}</td></tr>
+            <tr><td scope="col">Alternatiewe nommer:</td><td>{{.alt_phone}}</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Kinders</h2>
+    {{ if .children }}
+    <ul>
+        {{ range $child := .children }}
+        <li><a href="/person/view/{{ $child.id }}">{{ $child.name }}</a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+    <a href="/person/new?parent={{.id}}">Nuwe Kind</a>
+</div>

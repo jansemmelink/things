@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Organisasie</h1>
+    {{ if .parentID }}
+    <p>Deel van {{.parentName}}</p>
+    {{ end }}
+
+    <form action="/org/new?parent={{.parentID}}" method="post">
+        <div class="form-group">
+            <label for="name">Naam</label>
+            <input type="text" class="form-control" name="name" placeholder="Organisasie se naam">
+        </div>
+        <div class="form-group">
+            <label for="desc">Beskrywing</label>
+            <input type="text" class="form-control" name="desc" placeholder="Kort beskrywing van die organisasie">
+        </div>
+        <!-- logo and more details -->
+        <button type="submit" class="btn btn-primary">Stoor</button>
+    </form>
+</div>
